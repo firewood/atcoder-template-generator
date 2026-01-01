@@ -1,18 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { parseHtml } from "./html-parser";
-import { Lexer } from "./lexer";
-import { Parser } from "./parser";
-import { Analyzer } from "./analyzer";
-import { ItemNode, LoopNode } from "./types";
 import fs from "fs";
 import path from "path";
 
 describe("htmlParser", () => {
   it("should parse problem-example.html", () => {
-    const htmlPath = path.resolve(
-      __dirname,
-      "../../test-resources/single-case-example.html",
-    );
+    const htmlPath = path.resolve(__dirname, "../../test-resources/html/single-case.html");
     const html = fs.readFileSync(htmlPath, "utf-8");
     const result = parseHtml(html);
 
